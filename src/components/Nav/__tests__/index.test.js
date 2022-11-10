@@ -9,7 +9,7 @@ describe('Nav component', () => {
   // baseline test
   it('renders', () => {
     render(<Nav />);
-  });
+  })
 
   // snapshot test
   it('matches snapshot', () => {
@@ -24,6 +24,7 @@ describe('emoji is visible', () => {
     // Arrange
     const { getByLabelText } = render(<Nav />);
     // Assert
+    // eslint-disable-next-line testing-library/prefer-screen-queries
     expect(getByLabelText('camera')).toHaveTextContent('📸');
   });
 })
@@ -33,7 +34,9 @@ describe('links are visible', () => {
     // Arrange
     const { getByTestId } = render(<Nav />);
     // Assert
+    // eslint-disable-next-line testing-library/prefer-screen-queries
     expect(getByTestId('link')).toHaveTextContent('Oh Snap!');
+    // eslint-disable-next-line testing-library/prefer-screen-queries
     expect(getByTestId('about')).toHaveTextContent('About me');
   });
 })
